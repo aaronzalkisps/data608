@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<p>The following application will reverse what the user enters.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = prompt("Enter a phrase", "Hello");
+  if (x != null) {
+    document.getElementById("demo").innerHTML =
+    x.split("").reverse().join("")
+  }
+}
+</script>
+
+</body>
+</html>
