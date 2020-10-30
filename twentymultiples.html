@@ -1,0 +1,33 @@
+
+<html>
+	<head>
+		<title>JavaScript - Function to Display Table of an entered Number.</title>
+<script type="text/javascript">
+function update_e1p2(num){
+  var mult = Array.from(new Array(20), (x,i) => i + 1);
+  var vals = mult.map(x => x * num);
+  var elem = "";  
+  for (var i = 0; i < vals.length; i++) {  
+    if (i % 4 == 0) {
+      elem += "<tr><td>" + vals[i] + "</td>";
+    } else if (i + 1 % 4 == 0) {
+      elem += "<td>" + vals[i] + "</td></tr>";
+    } else {
+      elem += "<td>" + vals[i] + "</td>";
+    }  
+  }
+  var table = '<table>' + elem + '</table>';  
+  return(table)
+};
+function callback_e1p2(){
+  var t = document.getElementById("target_e1p2");
+  t.innerHTML = update_e1p2(document.getElementById('num_e1p2').value);
+}
+</script>
+<form>
+  <input id="num_e1p2" type="number" size="4">
+  <input type="button" value="Multiples" onClick="callback_e1p2();">
+</form>
+<div id="target_e1p2"></div>
+
+</html>
